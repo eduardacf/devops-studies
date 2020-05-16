@@ -1,0 +1,11 @@
+---
+- name: 
+  hosts: localhost
+  tasks:
+      shell: if [ ! -z $(pidof calculator) ]; then echo "RUNNING"; else echo "NOT RUNNING"; fi;
+      register: status
+
+- debug: 
+      var: status.stdout
+
+

@@ -1,0 +1,3 @@
+---
+- name: calculadora
+  shell: go run calculadora.go &

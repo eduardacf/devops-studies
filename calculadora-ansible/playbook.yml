@@ -1,0 +1,10 @@
+---
+- name: main
+  hosts: "*"
+  become: yes
+  become_user: root
+  roles:
+   - base
+   - go
+   - execute	
+   - check

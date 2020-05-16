@@ -1,0 +1,17 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_VERSION) do |config|
+
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.hostname = "calculadora-go"
+  config.vm.network "private_network", ip: "55.55.55.5"
+  
+    config.vm.provision "file", source: "calculadora.go", destination: "$HOME/calculadora.go"
+    config.vm.provision "shell", inline: "chmod +x calculadora.go"
+
+  config.vm.provision :shell, :path => "install.sh"
+
+end

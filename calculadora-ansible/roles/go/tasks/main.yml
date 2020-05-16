@@ -1,0 +1,11 @@
+---
+- name: instalacao golang
+  apt:
+    name: golang
+    state: present
+
+- name: instalacao gorilla/mux
+  git:
+    repo: https://github.com/gorilla/mux
+    dest: /home/vagrant/go/src/github.com/gorilla/mux
+
